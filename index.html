@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Brunelle — Computer Science</title>
+  <meta name="description"
+    content="Anthony Brunelle — Computer Science student (Data Science minor) at CSU San Marcos, based in San Diego." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (e) { }
+  </script>
+</head>
+
+<body class="is-loading">
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <span class="mono preloader-label">initializing</span>
+      <span class="preloader-count" id="preloaderCount">0</span>
+    </div>
+    <div class="preloader-bar"><span id="preloaderBar"></span></div>
+  </div>
+
+  <!-- Global effects -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo magnetic">AB<span class="accent">.</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle magnetic" id="themeToggle" aria-label="Toggle light/dark mode">
+        <span class="icon-sun">☀</span><span class="icon-moon">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="net" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="mono eyebrow hero-in" style="--d: 0">// hello, world — I'm</p>
+        <h1 class="hero-title">
+          <span class="line"><span class="scramble hero-in" style="--d: 1" data-text="Anthony">Anthony</span></span>
+          <span class="line"><span class="scramble gradient-text hero-in" style="--d: 2"
+              data-text="Brunelle.">Brunelle.</span></span>
+        </h1>
+        <p class="hero-role mono hero-in" style="--d: 3">
+          &gt; <span id="typed"></span><span class="caret">_</span>
+        </p>
+        <p class="hero-sub hero-in" style="--d: 4">
+          Computer Science student at <strong>CSU San Marcos</strong>, minoring in Data Science.
+          Cisco-certified in networking. Based in San Diego.
+        </p>
+        <div class="hero-cta hero-in" style="--d: 5">
+          <a href="#projects" class="btn btn-primary magnetic"><span>See my work</span></a>
+          <a href="https://www.linkedin.com/in/anthonybrunelle/" target="_blank" rel="noopener"
+            class="btn btn-ghost magnetic"><span>LinkedIn ↗</span></a>
+          <a href="https://github.com/anthonybrunelle" target="_blank" rel="noopener"
+            class="btn btn-ghost magnetic"><span>GitHub ↗</span></a>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint mono" aria-label="Scroll down">
+        <span>scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Networking</span><b>✦</b><span>Data Science</span><b>✦</b><span>Python</span><b>✦</b>
+        <span>IP Addressing</span><b>✦</b><span>Modern AI</span><b>✦</b><span>CCST Certified</span><b>✦</b>
+        <span>JavaScript</span><b>✦</b><span>SQL</span><b>✦</b>
+        <span>Networking</span><b>✦</b><span>Data Science</span><b>✦</b><span>Python</span><b>✦</b>
+        <span>IP Addressing</span><b>✦</b><span>Modern AI</span><b>✦</b><span>CCST Certified</span><b>✦</b>
+        <span>JavaScript</span><b>✦</b><span>SQL</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title"><span class="split">About</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="reveal">
+            I'm a Computer Science major at California State University San Marcos with a minor in Data Science.
+            I studied Computer Science at San Diego Mesa College from 2021 to 2025, transferred, and expect to
+            graduate in December 2027.
+          </p>
+          <p class="reveal">
+            So far I've gone deepest on networking, and I hold the
+            <strong>Cisco CCST Networking</strong> certification. The subnet calculator in the terminal below is
+            the subnetting math from that exam, written out in JavaScript.
+          </p>
+          <p class="reveal">
+            I also work at United Parks &amp; Resorts in San Diego. I started as a ride operator in 2022 and was
+            promoted to assistant supervisor in 2025.
+          </p>
+        </div>
+        <aside class="about-card spotlight reveal">
+          <h3 class="mono">quick_facts</h3>
+          <ul class="facts">
+            <li><span>location</span> San Diego, CA</li>
+            <li><span>school</span> CSU San Marcos</li>
+            <li><span>major</span> Computer Science</li>
+            <li><span>minor</span> Data Science</li>
+            <li><span>grad</span> Dec 2027</li>
+            <li><span>status</span>
+              <div class="status-val"><em class="status-dot"></em>open to internships</div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title"><span class="split">Projects</span></h2>
+      <!-- TODO: Add more projects -->
+      <div class="projects-grid">
+        <article class="project-card tilt spotlight reveal">
+          <div class="project-top">
+            <span class="project-icon">/26</span>
+            <div class="project-links">
+              <a href="#terminal">Try it ↓</a>
+            </div>
+          </div>
+          <span class="project-index mono">001</span>
+          <h3>Subnet calculator</h3>
+          <p>Give it an IPv4 address in CIDR notation and it works out the network address, netmask, wildcard,
+            broadcast address and usable host range. All bitwise operations in plain JavaScript, no libraries.</p>
+          <ul class="tags">
+            <li>JavaScript</li>
+            <li>IPv4</li>
+            <li>Subnetting</li>
+          </ul>
+        </article>
+
+        <article class="project-card tilt spotlight reveal">
+          <div class="project-top">
+            <span class="project-icon">{ }</span>
+            <div class="project-links">
+              <a href="https://github.com/anthonybrunelle" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <span class="project-index mono">002</span>
+          <h3>This website</h3>
+          <p>Built without a framework or template. It has a working terminal with command history and tab
+            completion, a canvas animation of a network behind the header, and a light and dark theme.</p>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Canvas</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- TERMINAL -->
+    <section id="terminal" class="section">
+      <h2 class="section-title"><span class="split">Terminal</span></h2>
+      <div class="term reveal" id="term">
+        <div class="term-bar">
+          <i></i><i></i><i></i>
+          <span class="mono">anthony@portfolio: ~</span>
+        </div>
+        <div class="term-body mono" id="termBody">
+          <div id="termOut" aria-live="polite"></div>
+          <form class="term-line" id="termForm">
+            <label for="termInput" class="term-prompt">anthony@portfolio:~$</label>
+            <div class="term-input-wrap">
+              <span class="term-ghost" id="termGhost" aria-hidden="true"></span>
+              <input id="termInput" type="text" autocomplete="off" spellcheck="false" autocapitalize="off"
+                aria-label="Terminal command" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <p class="term-hint mono reveal">try → <button data-cmd="help">help</button> <button
+          data-cmd="whoami">whoami</button> <button data-cmd="subnet 192.168.10.0/26">subnet 192.168.10.0/26</button>
+        <button data-cmd="ping github.com">ping github.com</button> <button data-cmd="matrix">matrix</button>
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2 class="section-title"><span class="split">Experience</span></h2>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-fill" id="timelineFill" aria-hidden="true"></div>
+        <div class="tl-item reveal">
+          <div class="tl-meta mono">Apr 2025 — Present</div>
+          <div class="tl-body">
+            <h3>Assistant Supervisor</h3>
+            <p class="tl-org">United Parks &amp; Resorts · San Diego, CA</p>
+            <p>Help lead daily operations and a team of ride operators, with a focus on safety and guest experience.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-meta mono">Apr 2022 — Apr 2025</div>
+          <div class="tl-body">
+            <h3>Ride Operator</h3>
+            <p class="tl-org">United Parks &amp; Resorts · San Diego, CA</p>
+            <p>Operated attractions following strict safety procedures while serving a high volume of guests.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-meta mono">Nov 2021 — Jan 2022</div>
+          <div class="tl-body">
+            <h3>Cashier / Customer Service</h3>
+            <p class="tl-org">Rubio's Restaurants, Inc. · San Diego, CA</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-meta mono">Oct 2021 — Nov 2021</div>
+          <div class="tl-body">
+            <h3>Tech Consultant</h3>
+            <p class="tl-org">Target · San Diego, CA</p>
+            <p>Helped customers choose and troubleshoot consumer electronics.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-meta mono">Nov 2018 — Aug 2020</div>
+          <div class="tl-body">
+            <h3>Cashier / Customer Service</h3>
+            <p class="tl-org">Stehly Farms Market · San Diego, CA</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div class="info-card spotlight reveal">
+          <h3 class="mono">education</h3>
+          <ul class="edu">
+            <li>
+              <strong>California State University San Marcos</strong>
+              <span>B.S. Computer Science · Minor in Data Science</span>
+              <span class="mono muted">Aug 2025 — Dec 2027</span>
+            </li>
+            <li>
+              <strong>San Diego Mesa College</strong>
+              <span>Computer Science</span>
+              <span class="mono muted">Aug 2021 — Jun 2025</span>
+            </li>
+          </ul>
+        </div>
+        <div class="info-card spotlight reveal">
+          <h3 class="mono">certifications</h3>
+          <ul class="certs">
+            <li>Cisco Certified Support Technician — Networking (CCST)</li>
+            <li>Networking Basics</li>
+            <li>Introduction to Modern AI</li>
+          </ul>
+        </div>
+        <div class="info-card spotlight reveal">
+          <h3 class="mono">skills</h3>
+          <ul class="tags">
+            <li>Python</li>
+            <li>Networking</li>
+            <li>IP Addressing</li>
+            <li>Subnetting</li>
+            <li>Docker</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Lua</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <p class="mono eyebrow reveal">what's next?</p>
+      <h2 class="contact-title"><span class="split">Let's</span> <span class="split gradient-text">connect.</span></h2>
+      <p class="reveal">I'm looking for internships and entry-level opportunities in software, networking, and data. My
+        inbox is open.</p>
+      <div class="hero-cta reveal">
+        <!-- Email is assembled by script.js so scrapers can't read it from the HTML -->
+        <a href="#contact" class="btn btn-primary btn-big magnetic" id="emailLink" data-u="htnaellenurb"
+          data-d="moc.liamg"><span>Say hello</span></a>
+      </div>
+      <div class="socials reveal">
+        <a href="https://www.linkedin.com/in/anthonybrunelle/" target="_blank" rel="noopener" class="magnetic">LinkedIn
+          ↗</a>
+        <a href="https://github.com/anthonybrunelle/" target="_blank" rel="noopener" class="magnetic">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    © <span id="year"></span> Anthony Brunelle · designed &amp; built from scratch with HTML, CSS &amp; JS
+  </footer>
+
+  <!-- Order matters: core.js defines shared values the others use -->
+  <script src="js/core.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/network.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/easter-eggs.js"></script>
+  <script src="js/terminal.js"></script>
+</body>
+
+</html>

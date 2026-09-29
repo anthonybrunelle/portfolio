@@ -1,6 +1,6 @@
 # portfolio
 
-My personal site: [anthonybrunelle.github.io/portfolio](https://anthonybrunelle.github.io/portfolio/)
+My personal site: [anthonybrunelle.com](https://anthonybrunelle.com/)
 
 The site is plain HTML, CSS and JavaScript. No framework, no build step, no dependencies besides two Google Fonts.
 
@@ -30,7 +30,7 @@ js/
 
 The scripts are classic `<script>` tags loaded in order, so the page also works when opened straight from disk.
 
-## Running it
+## Running it locally
 
 Clone the repo and open `index.html` in a browser.
 

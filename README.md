@@ -1,4 +1,4 @@
-# portfolio
+# My Portfolio Site
 
 My personal site: [anthonybrunelle.com](https://anthonybrunelle.com/)
 
